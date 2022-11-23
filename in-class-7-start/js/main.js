@@ -1,3 +1,6 @@
+import { CONTACTS } from '../js/contacts';
+import isEmail from 'validator/lib/isEmail';
+
 /*
 You're asked to filter out emails that aren't formatted correctly
 
@@ -16,15 +19,20 @@ You're asked to filter out emails that aren't formatted correctly
    function
 */
 
+
+
+renderContacts(CONTACTS);
+
+
 function renderContacts(allContacts) {
-	let allContactsList = document.querySelector(".all-contacts");
-	allContactsList.innerHTML = '';
-	allContacts.map((contact) => {
-		allContactsList.innerHTML += `<div class="list-group-item list-group-item-action">
+  let allContactsList = document.querySelector(".all-contacts");
+  allContactsList.innerHTML = '';
+  allContacts.map((contact) => {
+    allContactsList.innerHTML += `<div class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">${contact.name}</h5>
         </div>
       <small>${contact.email}</small>
     </div>`;
-	});
+  });
 }
