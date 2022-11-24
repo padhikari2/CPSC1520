@@ -561,7 +561,7 @@ function renderContacts(allContacts) {
     let allContactsList = document.querySelector(".all-contacts");
     allContactsList.innerHTML = "";
     allContacts.map((contact)=>{
-        allContactsList.innerHTML += `<div class="list-group-item list-group-item-action">
+        if ((0, _isEmailDefault.default)(contact.email)) allContactsList.innerHTML += `<div class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">${contact.name}</h5>
         </div>
